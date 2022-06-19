@@ -19,7 +19,7 @@ const downloadImage = (blob, fileName) => {
   fakeLink.remove();
 };
 
-const Capture = ({ img, textTop, textBottom, color }) => {
+const Capture = ({ img, textTop, textBottom, color, fontSize }) => {
   const ref = useRef(null);
 
   return (
@@ -36,10 +36,11 @@ const Capture = ({ img, textTop, textBottom, color }) => {
           display: "flex",
           justifyContent: "space-between",
           flexDirection: "column",
+          fontSize: "12"
         }}
       >
-        <p style={{ zIndex: 1, color }}>{textTop}</p>
-        <p style={{ zIndex: 1, color }}>{textBottom}</p>
+        <p style={{ zIndex: 1, color, fontSize }}>{textTop}</p>
+        <p style={{ zIndex: 1, color, fontSize }}>{textBottom}</p>
       </div>
       <button onClick={() => exportAsImage(ref.current, "test")}>
         Click me

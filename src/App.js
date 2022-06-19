@@ -8,6 +8,7 @@ function App() {
   const [text1, setText1] = useState("Text1");
   const [text2, setText2] = useState("Text2");
   const [color, setColor] = useState("Blue");
+  const [fontSize, setFontSize] = useState("FontSize");
 
   useEffect(() => {
     if (!file) {
@@ -29,6 +30,7 @@ function App() {
             textTop={text1}
             textBottom={text2}
             color={color}
+            fontSize={fontSize}
           />
         )}
         <label>
@@ -62,6 +64,14 @@ function App() {
             onChange={({ target }) => setColor(target.value)}
           />
         </label>
+
+        {/* <label>
+          Choose a font:
+          <input
+            type={"number"}
+            onChange={({ target }) => setFontSize(target.value)}
+          />
+        </label> */}
       </header>
     </div>
   );
