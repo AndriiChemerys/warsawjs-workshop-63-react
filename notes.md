@@ -1,0 +1,1 @@
+npx create-react-app . -> create app in root folder
