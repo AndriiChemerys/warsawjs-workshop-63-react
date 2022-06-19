@@ -1,26 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-import Text from './components/Text';
+import logo from "./logo.svg";
+import "./App.css";
+import Capture from "./components/Capture";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Text text={'test'} defaultParameter={5}/>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Text text={'value'}/>
-
+        <Capture img={logo} />
       </header>
     </div>
   );
