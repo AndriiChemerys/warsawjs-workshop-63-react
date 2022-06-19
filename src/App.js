@@ -7,6 +7,7 @@ function App() {
   const [preview, setPreview] = useState();
   const [text1, setText1] = useState("Text1");
   const [text2, setText2] = useState("Text2");
+  const [color, setColor] = useState("Blue");
 
   useEffect(() => {
     if (!file) {
@@ -23,20 +24,44 @@ function App() {
     <div className="App">
       <header className="App-header">
         {preview && (
-          <Capture img={preview} textTop={text1} textBottom={text2} />
+          <Capture
+            img={preview}
+            textTop={text1}
+            textBottom={text2}
+            color={color}
+          />
         )}
-        <input
-          type={"text"}
-          onChange={({ target }) => setText1(target.value)}
-        />
-        <input
-          type={"text"}
-          onChange={({ target }) => setText2(target.value)}
-        />
-        <input
-          type={"file"}
-          onChange={({ target }) => setFile(target.files[0])}
-        />
+        <label>
+          Text top:
+          <input
+            type={"text"}
+            onChange={({ target }) => setText1(target.value)}
+          />
+        </label>
+
+        <label>
+          Text bottom:
+          <input
+            type={"text"}
+            onChange={({ target }) => setText2(target.value)}
+          />
+        </label>
+
+        <label>
+          Choose your image:
+          <input
+            type={"file"}
+            onChange={({ target }) => setFile(target.files[0])}
+          />
+        </label>
+
+        <label>
+          Choose a color:
+          <input
+            type={"text"}
+            onChange={({ target }) => setColor(target.value)}
+          />
+        </label>
       </header>
     </div>
   );
